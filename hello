@@ -1,0 +1,30 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+    fstream file;
+    string s;
+    file.open("hello.txt", ios::in|ios::out|ios::trunc);
+
+    file << "hello who are you?\n";
+    cout<<file.tellg()<<endl;
+    cout<<file.tellp()<<endl;
+  
+    file.seekg(0, ios::beg);
+    cout<<file.tellg()<<endl;
+    cout<<file.tellp()<<endl;
+
+    getline(file,s);
+    cout<<s<<endl;
+    
+
+
+
+
+
+
+    file.close();
+
+    return 0;
+}
